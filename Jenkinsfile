@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage("Build Image"){
             steps{
-                sh 'echo "hello"'
+                sh 'touch helloooooo'
             }
 
         }
