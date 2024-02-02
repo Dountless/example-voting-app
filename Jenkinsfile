@@ -3,16 +3,20 @@ pipeline{
         label "my-deployment"
     }
     stages{
-        stage("Build Image"){
+        stage("SetUp"){
             steps{
-                sh 'touch helloooooo'
+                sh 'echo "hello"'
             }
 
         }
-        stage("push to dockerhub"){
+        stage("Build Image"){
             steps{
-                // sh "docker build -t amankumar19/voting-app:latest . "
-                sh 'echo "hello"'
+           echo 'Start building the project docker image for production'
+          script {
+             testImage = docker.build("amankumar19/myvotingapp:latest", "-f ./Dockerfile .")
+            //  testImage.push()
+            }
+
             }
 
         }
