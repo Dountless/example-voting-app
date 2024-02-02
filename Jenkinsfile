@@ -13,7 +13,7 @@ pipeline{
             steps{
            echo 'Start building the project docker image for production'
           script {
-             testImage = docker.build("amankumar19/myvotingapp:latest", "-f ./Dockerfile .")
+             testImage = docker.build("amankumar19/myvotingapp:latest", "-f ./vote/Dockerfile .")
             //  testImage.push()
             }
 
