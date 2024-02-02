@@ -13,8 +13,9 @@ pipeline{
             steps{
            echo 'Start building the project docker image for production'
           script {
-             testImage = docker.build("amankumar19/myvotingapp:latest", "-f ./vote/Dockerfile .")
+            //  testImage = docker.build("amankumar19/myvotingapp:latest", "-f ./Dockerfile .")
             //  testImage.push()
+            echo "buildsuccessfully "
             }
 
             }
@@ -23,7 +24,9 @@ pipeline{
         stage("deploy to deployment-server"){
             steps{
                 // sh "docker build -t amankumar19/voting-app:latest . "
-                sh 'echo "hello"'
+                sh '''
+                    docker container run -d --name myweb -p 80:80 nginx 
+                '''
             }
 
         }
