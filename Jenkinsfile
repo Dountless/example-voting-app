@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label "any"
+        label "my-deployment"
     }
     stages{
         stage("Build Image"){
