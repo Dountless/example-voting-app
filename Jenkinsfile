@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("SetUp"){
             steps{
-                sh 'echo "hello"'
+                sh 'echo "hjjjello"'
             }
 
         }
