@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        label "my-deployment"
-    }
+    agent any
     stages{
         stage("SetUp"){
             steps{
@@ -22,6 +20,9 @@ pipeline{
 
         }
         stage("deploy to deployment-server"){
+            agent{
+                  label "my-deployment"
+                }
             steps{
                 // sh "docker build -t amankumar19/voting-app:latest . "
                 sh '''
